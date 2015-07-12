@@ -22,7 +22,7 @@ plot4 <- function(input_file="household_power_consumption.txt",output_file="plot
 	data_subset$date_time<-strptime(paste(data_subset$Date, data_subset$Time, sep=" "), format = "%d/%m/%Y %H:%M:%S")
 
 	## plot 4 graphs on one page, in a 2x2 pattern
-	par(mfrow = c(2,2), mar = c(2.5,4.1,4.1,2.1))  
+	par(mfrow = c(2,2), mar = c(4.1,4.1,4.1,2.1))  
 	
 		## plot Global Active Power through time
 		plot(data_subset$date_time, data_subset$Global_active_power, type="l", xlab="", ylab="Global Active Power")
