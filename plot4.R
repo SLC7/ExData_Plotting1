@@ -22,7 +22,7 @@ plot4 <- function(input_file="household_power_consumption.txt",output_file="plot
 	data_subset$date_time<-strptime(paste(data_subset$Date, data_subset$Time, sep=" "), format = "%d/%m/%Y %H:%M:%S")
 
 	## plot 4 graphs on one page, in a 2x2 pattern
-	par(mfrow = c(2,2))  
+	par(mfrow = c(2,2), mar = c(2.5,4.1,4.1,2.1))  
 	
 		## plot Global Active Power through time
 		plot(data_subset$date_time, data_subset$Global_active_power, type="l", xlab="", ylab="Global Active Power")
@@ -37,7 +37,7 @@ plot4 <- function(input_file="household_power_consumption.txt",output_file="plot
 		lines(data_subset$date_time, data_subset$Sub_metering_3, col="blue")
 		
 			## add the legend
-			legend("topright",lwd = 1, bty = "n",col=c("black","red","blue"),legend=c("Sub_metering_1 ","Sub_metering_2 ","Sub_metering_3 "))
+			legend("topright",lwd = 1, bty = "n", col=c("black","red","blue"), cex=0.5, xjust = 1, legend=c("Sub_metering_1   ","Sub_metering_2   ","Sub_metering_3   "))
 
 		## plot Global Reactive Power through time
 		plot(data_subset$date_time, data_subset$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
